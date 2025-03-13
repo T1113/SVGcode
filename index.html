@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商业模式演化与创新</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapse-open {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+        .section-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        .section-header {
+            cursor: pointer;
+            padding: 16px;
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-content {
+            padding: 16px;
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-10">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">商业模式演化与创新</h1>
+            <p class="text-gray-600">南山区学苑大道讲座内容整理</p>
+        </header>
+
+        <main>
+            <!-- 引言部分 -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">引言：商业模式的重要性</h2>
+                <p class="text-gray-700 mb-4">
+                    商业模式是创造价值、获取价值和传递价值的手段和方法。对于数字化企业而言，商业模式创新是决定企业能否突破并在未来繁荣发展的关键因素。尽管技术创新、产品创新、流程创新和业务创新都很重要，但如果仍然使用老旧的商业模式，创新很可能在最后一公里功亏一篑。
+                </p>
+            </section>
+
+            <!-- 商业模式演化 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('evolution')">
+                    <h2 class="text-xl font-semibold text-gray-800">商业模式的演化</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="evolution" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="200" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 时间轴 -->
+                                <line x1="50" y1="60" x2="750" y2="60" stroke="#94a3b8" stroke-width="2"/>
+                                
+                                <!-- 时间点 -->
+                                <circle cx="100" cy="60" r="8" fill="#3b82f6"/>
+                                <circle cx="250" cy="60" r="8" fill="#3b82f6"/>
+                                <circle cx="400" cy="60" r="8" fill="#3b82f6"/>
+                                <circle cx="550" cy="60" r="8" fill="#3b82f6"/>
+                                <circle cx="700" cy="60" r="8" fill="#3b82f6"/>
+                                
+                                <!-- 时间标签 -->
+                                <text x="100" y="90" text-anchor="middle" fill="#1e293b" font-size="12">1900-1950</text>
+                                <text x="250" y="90" text-anchor="middle" fill="#1e293b" font-size="12">1950-1990</text>
+                                <text x="400" y="90" text-anchor="middle" fill="#1e293b" font-size="12">1990-2010</text>
+                                <text x="550" y="90" text-anchor="middle" fill="#1e293b" font-size="12">2010-2025</text>
+                                <text x="700" y="90" text-anchor="middle" fill="#1e293b" font-size="12">2025+</text>
+                                
+                                <!-- 模式标签 -->
+                                <text x="100" y="30" text-anchor="middle" fill="#1e293b" font-size="11">大规模标准化生产</text>
+                                <text x="250" y="30" text-anchor="middle" fill="#1e293b" font-size="11">渠道扩展与市场营销</text>
+                                <text x="400" y="30" text-anchor="middle" fill="#1e293b" font-size="11">流量为核心的电商平台</text>
+                                <text x="550" y="30" text-anchor="middle" fill="#1e293b" font-size="11">用户为核心的个性化推荐</text>
+                                <text x="700" y="30" text-anchor="middle" fill="#1e293b" font-size="11">AI智能体与自动化</text>
+                                
+                                <!-- 代表企业 -->
+                                <text x="100" y="110" text-anchor="middle" fill="#64748b" font-size="10">福特</text>
+                                <text x="250" y="110" text-anchor="middle" fill="#64748b" font-size="10">可口可乐、沃尔玛</text>
+                                <text x="400" y="110" text-anchor="middle" fill="#64748b" font-size="10">亚马逊、阿里巴巴</text>
+                                <text x="550" y="110" text-anchor="middle" fill="#64748b" font-size="10">抖音、拼多多</text>
+                                <text x="700" y="110" text-anchor="middle" fill="#64748b" font-size="10">未来企业</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            商业模式的演化可以分为几个关键阶段：
+                        </p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2 text-gray-700">
+                            <li><strong>1900-1950年：</strong>以大规模标准化生产为核心，强调对生产资料的控制，代表企业为福特。</li>
+                            <li><strong>1950-1990年：</strong>以渠道扩展和市场营销为核心，低成本生产、大众广告和全球分销网络，代表企业为可口可乐、沃尔玛。</li>
+                            <li><strong>1990-2010年：</strong>以流量为核心的电商平台模式，对信息分发和流量的控制，代表企业为亚马逊、阿里巴巴。</li>
+                            <li><strong>2010-2025年：</strong>以用户为核心的个性化推荐模式，对用户画像和行为数据的掌控，代表企业为抖音、拼多多。</li>
+                            <li><strong>2025年及以后：</strong>预计将以AI智能体和自动化为核心，多智能体的人机协作加超级个体的决策。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 福特案例 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('ford')">
+                    <h2 class="text-xl font-semibold text-gray-800">福特：大规模标准化生产的革命</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="ford" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 福特T型车 简化图形 -->
+                                <rect x="150" y="100" width="300" height="50" rx="10" fill="#000" />
+                                <rect x="180" y="70" width="240" height="40" rx="5" fill="#111" />
+                                <circle cx="200" cy="150" r="25" fill="#333" stroke="#666" stroke-width="5" />
+                                <circle cx="400" cy="150" r="25" fill="#333" stroke="#666" stroke-width="5" />
+                                
+                                <!-- 流水线示意 -->
+                                <line x1="50" y1="180" x2="550" y2="180" stroke="#94a3b8" stroke-width="4" stroke-dasharray="10,5" />
+                                
+                                <!-- 标签 -->
+                                <text x="300" y="30" text-anchor="middle" fill="#1e293b" font-size="16" font-weight="bold">福特T型车 (1908)</text>
+                                <text x="300" y="195" text-anchor="middle" fill="#64748b" font-size="14">流水线生产方式</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            1908年，福特推出了全球第一条汽车流水线，生产T型车，这彻底改变了生产制造方式。在此之前，美国有约250多家造车企业，更像是作坊式生产。福特的流水线出现后，生产方式发生了革命性变化。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            福特T型车的价格约为250美元，而当时市面上汽车的平均价格约为1500美元，价格降至原来的1/6。同时，福特给工人涨了4倍工资，使得工人每个季度的工资足以购买一部福特汽车，这样将供给和需求通过高效模式连接起来。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            福特开启了规模经济时代，提高生产效率，降低成本，实现批量生产。但这种生产方式也有局限性：产品高度标准化，缺乏个性化选择。正如亨利·福特所说："顾客可以选择任何颜色，只要是黑色的。"
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            福特的创新原则是让技术民主化，将技术变成消费品，让每个人都能用得起，这反而能创造更多价值。1956年福特公司上市时，成为当时历史上最大的IPO。
+                        </p>
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <h3 class="font-semibold text-blue-800 mb-2">创新法则：相似性原则</h3>
+                            <p class="text-gray-700">
+                                福特的流水线灵感来源于芝加哥肉联厂（1878年）。创新的第一法则是相似性原则：将其他行业领域已被验证的成熟高效做法应用到自己的行业中。只有突破现有观念的限制，才有新的创新机会。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 可口可乐案例 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('cocacola')">
+                    <h2 class="text-xl font-semibold text-gray-800">可口可乐：品牌营销与商业模式创新</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="cocacola" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 可口可乐瓶和圣诞老人简化图形 -->
+                                <rect x="100" y="40" width="150" height="100" rx="20" fill="#e51e2a" />
+                                <text x="175" y="95" text-anchor="middle" fill="white" font-size="14" font-weight="bold">可口可乐</text>
+                                
+                                <!-- 圣诞老人 -->
+                                <circle cx="400" cy="60" r="30" fill="#e51e2a" />
+                                <rect x="370" y="90" width="60" height="60" fill="#e51e2a" />
+                                <rect x="385" y="150" width="30" height="20" fill="#333" />
+                                <circle cx="385" cy="55" r="5" fill="white" />
+                                <circle cx="415" cy="55" r="5" fill="white" />
+                                <path d="M390,70 Q400,80 410,70" stroke="white" stroke-width="2" fill="none" />
+                                
+                                <!-- 连接线 -->
+                                <line x1="250" y1="90" x2="350" y2="90" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5" />
+                                
+                                <!-- 标签 -->
+                                <text x="175" y="160" text-anchor="middle" fill="#64748b" font-size="12">品牌营销</text>
+                                <text x="400" y="30" text-anchor="middle" fill="#64748b" font-size="12">圣诞老人形象(1931)</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            可口可乐在上世纪30年代首创了现代圣诞老人的形象，这一形象后来成为了全球性的传统。虽然圣诞老人源自北欧神话，但可口可乐将其与圣诞节紧密结合，成功地利用了宗教节日进行品牌营销。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            二战期间，可口可乐说服美国国防部将可乐作为士兵军需品的一部分，每天一罐，让士兵在战场上也能享受片刻放松。这一策略使可口可乐从众多可乐品牌中脱颖而出，成为全球性品牌。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            可口可乐真正的商业模式创新在于其瓶装投资公司模式。可口可乐只拥有配方，销售浓缩液，而实际生产则由授权的装瓶公司完成。可口可乐先投资当地装瓶公司建立生产线，一旦正常运行后就撤资，只收取配方使用费，这成为其核心竞争力。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            目前全球约有200个国家各有一个可口可乐装瓶集团，全球约900家瓶装厂每天为可口可乐生产22亿瓶可乐。巴菲特投资组合中，可口可乐占19%，他看重的是"能让消费者上瘾"的产品特性。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 亚马逊案例 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('amazon')">
+                    <h2 class="text-xl font-semibold text-gray-800">亚马逊：技术驱动的商业模式创新</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="amazon" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 亚马逊飞轮效应图 -->
+                                <circle cx="400" cy="150" r="120" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2" />
+                                
+                                <!-- 中心点 -->
+                                <circle cx="400" cy="150" r="30" fill="#fbbf24" />
+                                <text x="400" y="155" text-anchor="middle" fill="#1e293b" font-size="12" font-weight="bold">客户体验</text>
+                                
+                                <!-- 飞轮元素 -->
+                                <g transform="translate(400,150)">
+                                    <!-- 元素1 -->
+                                    <circle cx="0" cy="-90" r="25" fill="#60a5fa" />
+                                    <text x="0" y="-87" text-anchor="middle" fill="white" font-size="10">流量增加</text>
+                                    <path d="M0,-60 L0,-65 A25,25 0 0,1 0,-90" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 元素2 -->
+                                    <circle cx="85" cy="-28" r="25" fill="#60a5fa" />
+                                    <text x="85" y="-25" text-anchor="middle" fill="white" font-size="10">更多买家</text>
+                                    <path d="M60,-20 L65,-23 A90,90 0 0,1 85,-28" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 元素3 -->
+                                    <circle cx="85" cy="28" r="25" fill="#60a5fa" />
+                                    <text x="85" y="31" text-anchor="middle" fill="white" font-size="10">更多选择</text>
+                                    <path d="M60,20 L65,23 A90,90 0 0,0 85,28" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 元素4 -->
+                                    <circle cx="0" cy="90" r="25" fill="#60a5fa" />
+                                    <text x="0" y="93" text-anchor="middle" fill="white" font-size="10">成本降低</text>
+                                    <path d="M0,60 L0,65 A25,25 0 0,0 0,90" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 元素5 -->
+                                    <circle cx="-85" cy="28" r="25" fill="#60a5fa" />
+                                    <text x="-85" y="31" text-anchor="middle" fill="white" font-size="10">价格更低</text>
+                                    <path d="M-60,20 L-65,23 A90,90 0 0,1 -85,28" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 元素6 -->
+                                    <circle cx="-85" cy="-28" r="25" fill="#60a5fa" />
+                                    <text x="-85" y="-25" text-anchor="middle" fill="white" font-size="10">体验提升</text>
+                                    <path d="M-60,-20 L-65,-23 A90,90 0 0,0 -85,-28" stroke="#94a3b8" stroke-width="2" fill="none" />
+                                    
+                                    <!-- 连接回中心 -->
+                                    <path d="M-60,-20 C-40,-30 -20,-30 0,-30" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="5,5" />
+                                </g>
+                                
+                                <!-- 标题 -->
+                                <text x="400" y="30" text-anchor="middle" fill="#1e293b" font-size="16" font-weight="bold">亚马逊飞轮效应</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            亚马逊从1995年创立到2016年前，一直处于亏损状态，但贝索斯坚持长期主义战略，将客户体验放在首位。亚马逊通过"飞轮效应"实现了商业模式的持续创新：更好的客户体验带来更多流量，更多流量带来更多买家，更多买家带来更多选择，更多选择摊薄基础设施成本，成本降低带来更低价格，更低价格进一步提升客户体验。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            亚马逊的胜负手是其Prime会员计划。虽然初期CFO预测会增加亏损，但贝索斯坚持推行，因为他看到了数字资产的价值。Prime会员的年均采购量比非会员高40%，目前亚马逊拥有超过1亿会员。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            亚马逊从卖书起步，通过书籍数据构建用户画像，进而扩展到其他产品，实现了"万物商店"的愿景。其核心技术是协同过滤推荐算法，通过用户购买的书籍类型推断用户兴趣，进而推荐相关产品。
+                        </p>
+                        <div class="bg-blue-50 p-4 rounded-md mb-4">
+                            <h3 class="font-semibold text-blue-800 mb-2">亚马逊AWS的诞生</h3>
+                            <p class="text-gray-700">
+                                亚马逊在2006年推出AWS云服务，源于解决电商业务季节性流量不平衡的问题。11-12月流量占全年80%，其余10个月仅20%。亚马逊将这一成本中心转变为利润中心，开放给外部企业使用。贝索斯要求部门间服务必须通过内部云平台，被三个部门使用的服务就发布到公网，成为盈利的API。
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            亚马逊通过技术创新推动商业模式创新，从电商扩展到云服务(AWS)、物流仓储(FBA)、物联网和AI领域。亚马逊的成功在于它从未将自己定位为零售企业，而是一家技术公司，核心竞争力是技术而非位置。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 拼多多案例 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('pinduoduo')">
+                    <h2 class="text-xl font-semibold text-gray-800">拼多多：对抗性原则与算法推荐</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="pinduoduo" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 对比图 -->
+                                <rect x="50" y="50" width="200" height="100" rx="5" fill="#f97316" opacity="0.2" stroke="#f97316" stroke-width="2" />
+                                <rect x="350" y="50" width="200" height="100" rx="5" fill="#e11d48" opacity="0.2" stroke="#e11d48" stroke-width="2" />
+                                
+                                <!-- 标题 -->
+                                <text x="150" y="30" text-anchor="middle" fill="#f97316" font-size="14" font-weight="bold">阿里巴巴</text>
+                                <text x="450" y="30" text-anchor="middle" fill="#e11d48" font-size="14" font-weight="bold">拼多多</text>
+                                
+                                <!-- 特点列表 -->
+                                <text x="60" y="70" fill="#1e293b" font-size="12">• 平台电商</text>
+                                <text x="60" y="90" fill="#1e293b" font-size="12">• 从商户挣钱（广告费）</text>
+                                <text x="60" y="110" fill="#1e293b" font-size="12">• 流量思维</text>
+                                <text x="60" y="130" fill="#1e293b" font-size="12">• 交易完成即离开</text>
+                                
+                                <text x="360" y="70" fill="#1e293b" font-size="12">• 社交电商</text>
+                                <text x="360" y="90" fill="#1e293b" font-size="12">• 从消费者角度出发</text>
+                                <text x="360" y="110" fill="#1e293b" font-size="12">• 算法推荐思维</text>
+                                <text x="360" y="130" fill="#1e293b" font-size="12">• 游戏化互动留存</text>
+                                
+                                <!-- 对抗箭头 -->
+                                <line x1="260" y1="100" x2="340" y2="100" stroke="#94a3b8" stroke-width="2" />
+                                <polygon points="340,100 330,95 330,105" fill="#94a3b8" />
+                                <text x="300" y="90" text-anchor="middle" fill="#64748b" font-size="12">对抗性原则</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            拼多多能够超越阿里巴巴的核心原因在于两者商业模式的根本差异。阿里巴巴是平台电商，主要通过向商户收取广告费盈利；而拼多多采用算法推荐思维，从消费者角度出发，将游戏元素引入电商平台。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            拼多多通过游戏化互动（如"砍一刀"）增加用户在平台上的交互次数，每次交互都是收集用户行为数据的机会，从而构建更完整的用户行为画像，实现精准推送。
+                        </p>
+                        <div class="bg-blue-50 p-4 rounded-md mb-4">
+                            <h3 class="font-semibold text-blue-800 mb-2">创新法则：对抗性原则</h3>
+                            <p class="text-gray-700">
+                                拼多多的创新模式体现了对抗性原则：当竞争对手做平台电商，拼多多做社交电商；竞争对手收流量广告费，拼多多收推荐费。一个战略的反面往往是更好的战略。阿里巴巴"让天下没有难做的生意"后垄断了电商流量，拼多多则找到了另一条路径，解决了人性需求的问题。
+                            </p>
+                        </div>
+                        <p class="text-gray-700">
+                            拼多多的成功也体现了"借力"原则——利用微信朋友圈实现快速增长。要想成长更快，必须利用当前时代增长最快的技术或生态系统，借助他人的力量实现自身发展。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 未来趋势 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('future')">
+                    <h2 class="text-xl font-semibold text-gray-800">未来趋势：AI智能体与商业模式创新</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="future" class="collapse-content">
+                    <div class="section-content">
+                        <div class="mb-6">
+                            <svg class="w-full" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- AI智能体示意图 -->
+                                <circle cx="300" cy="100" r="60" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" stroke-width="2" />
+                                <circle cx="300" cy="100" r="30" fill="#8b5cf6" opacity="0.4" />
+                                
+                                <!-- 连接线 -->
+                                <line x1="200" y1="60" x2="260" y2="80" stroke="#94a3b8" stroke-width="2" />
+                                <line x1="200" y1="140" x2="260" y2="120" stroke="#94a3b8" stroke-width="2" />
+                                <line x1="400" y1="60" x2="340" y2="80" stroke="#94a3b8" stroke-width="2" />
+                                <line x1="400" y1="140" x2="340" y2="120" stroke="#94a3b8" stroke-width="2" />
+                                
+                                <!-- 节点 -->
+                                <circle cx="200" cy="60" r="15" fill="#10b981" />
+                                <circle cx="200" cy="140" r="15" fill="#f59e0b" />
+                                <circle cx="400" cy="60" r="15" fill="#3b82f6" />
+                                <circle cx="400" cy="140" r="15" fill="#ef4444" />
+                                
+                                <!-- 标签 -->
+                                <text x="300" cy="100" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">AI智能体</text>
+                                <text x="200" y="65" text-anchor="middle" fill="white" font-size="10">人类</text>
+                                <text x="200" y="145" text-anchor="middle" fill="white" font-size="10">数据</text>
+                                <text x="400" y="65" text-anchor="middle" fill="white" font-size="10">服务</text>
+                                <text x="400" y="145" text-anchor="middle" fill="white" font-size="10">决策</text>
+                                
+                                <text x="300" y="30" text-anchor="middle" fill="#1e293b" font-size="16" font-weight="bold">2025+: AI智能体商业模式</text>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            2025年及以后，预计商业模式将以AI智能体和自动化为核心，实现多智能体的人机协作加超级个体的决策。未来的组织形态可能会变成个体，但这个体也会有AI的加持。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            AI智能体将改变价值创造、获取和传递的方式，为企业带来新的商业模式创新机会。那些能够率先看到并把握这一趋势的企业和个人，将在未来十年获得巨大的发展机会。
+                        </p>
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <h3 class="font-semibold text-blue-800 mb-2">商业模式验证的三要素</h3>
+                            <p class="text-gray-700">
+                                判断一个商业模式是否被验证，需要考虑三个关键要素：
+                            </p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-700">
+                                <li><strong>可复制：</strong>产品有人买有人用，可以批量供货</li>
+                                <li><strong>可扩展：</strong>根据对客户需求的了解，快速叠加新的产品和服务，延展用户生命周期价值</li>
+                                <li><strong>可盈利：</strong>获客成本越来越低，为客户创造价值的敏捷程度越来越高，最终实现大规模盈利</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商业模式创新的数据图表 -->
+            <div class="section-card">
+                <div class="section-header" onclick="toggleCollapse('chart')">
+                    <h2 class="text-xl font-semibold text-gray-800">商业模式创新的价值对比</h2>
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div id="chart" class="collapse-content">
+                    <div class="section-content">
+                        <div class="chart-container">
+                            <canvas id="businessModelChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
